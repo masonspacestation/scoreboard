@@ -1,0 +1,34 @@
+:root {
+  --yellow: #f2bf60;
+  --red: #e15745;
+  --green: #259a42;
+}
+
+
+
+
+body {
+  background-color: var(--yellow);
+  color: var(--red);
+}
+
+img {
+  max-width: 100%;
+}
+
+.btn-yeah {
+  background-color: var(--green);
+}
+
+.btn-nah {
+  background-color: var(--red);
+}
+
+.btn-yeah:hover {
+  border: 4px solid var(--green);
+  color: var(--green);
+}
+
+.btn-nah:hover {
+  border: 4px solid var(--red);
+}
