@@ -2,6 +2,7 @@
   --yellow: #f2bf60;
   --red: #e15745;
   --green: #259a42;
+  --dark: #333;
 }
 
 
@@ -9,7 +10,7 @@
 
 body {
   background-color: var(--yellow);
-  color: var(--red);
+  color: var(--dark);
 }
 
 img {

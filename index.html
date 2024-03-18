@@ -16,27 +16,33 @@
 <body class="debug container-fluid">
   <!-- SECTION header -->
   <header class="row justify-content-center m-2">
-    <div class="col-6 text-center h3">Pineapple on Pizza?</div>
+    <div class="col-6 text-center h3">Controversial Pizza</div>
   </header>
 
   <main class="container-fluid">
     <!-- SECTION interface -->
     <section class="row justify-content-between">
       <div class="col-3 text-center">
-        <button class="btn rounded rounded-pill fw-bolder btn-yeah w-75 my-2 p-2"
-          onclick="increasePineapple()">🍍</button>
+        <h2>Pineapple <i class="mdi mdi-fruit-pineapple"></i></h2>
+        <button class="btn rounded rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increasePineapple()">Yes
+          Please</button>
         <button class="btn rounded
-  rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreasePineapple()">Allowed</button>
+          rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreasePineapple()">Both Gross</button>
+        <button class="btn rounded rounded-pill fw-bolder btn-warning w-75 my-2 p-2" onclick="extraPineapple()">Extra
+          Pineapple!</button>
       </div>
       <div class="col-4"><img src="//placehold.it/600x600" alt="pizza"></div>
       <!-- <div class="col-4"><img
           src="https://www.eatingwell.com/thmb/oHvDTS4pq63C9uF1YK03SEpdSrU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gettyimages-1124303516-36413b5bf61f45f1b7d18d90000b56b7.jpg"
           alt="pizza"></div> -->
       <div class="col-3 text-center">
+        <h2>Anchovies <i class="mdi mdi-fish"></i></h2>
         <button class="btn rounded
-  rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increaseAntiPineapple()">🚫</button>
+  rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increaseAnchovies()">🐟</button>
         <button class="btn rounded
-  rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreaseAntiPineapple()">Not Into It</button>
+  rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreaseAnchovies()">Not Into It</button>
+        <button class="btn rounded rounded-pill fw-bolder btn-warning w-75 my-2 p-2" onclick="extraAnchovies()">Extra
+          Anchovies!</button>
       </div>
     </section>
 
@@ -44,11 +50,14 @@
     <section class="row justify-content-around py-5">
       <div class="col-2">
         <h3 class="bg-light rounded border border-2 border-dark text-center p-4" id="pineappleScore">0</h3>
-        <h5 class="text-dark text-center">Allowed</h5>
+        <h5 class="text-dark text-center">Pineapple</h5>
+      </div>
+      <div class="col-4 text-center">
+        <button class="btn rounded border border-3 border-danger" onclick="resetScore()">RESET</button>
       </div>
       <div class="col-2">
-        <h3 class="bg-light rounded border border-2 border-dark text-center p-4" id="antiPineappleScore">0</h3>
-        <h5 class="text-dark text-center">Not Allowed</h5>
+        <h3 class="bg-light rounded border border-2 border-dark text-center p-4" id="anchoviesScore">0</h3>
+        <h5 class="text-dark text-center">Anchovies</h5>
       </div>
 
     </section>
