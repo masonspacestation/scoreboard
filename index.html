@@ -21,28 +21,35 @@
 
   <main class="container-fluid">
     <!-- SECTION interface -->
-    <section class="row justify-content-between">
+    <section class="row justify-content-between align-items-center">
       <div class="col-3 text-center">
-        <h2>Pineapple <i class="mdi mdi-fruit-pineapple"></i></h2>
-        <button class="btn rounded rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increasePineapple()">Yes
-          Please</button>
-        <button class="btn rounded
-          rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreasePineapple()">Both Gross</button>
-        <button class="btn rounded rounded-pill fw-bolder btn-warning w-75 my-2 p-2" onclick="extraPineapple()">Extra
-          Pineapple!</button>
+        <div class="card d-flex align-items-center p-3">
+          <h2>Pineapple <i class="mdi mdi-fruit-pineapple"></i></h2>
+          <button class="btn rounded rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increasePineapple()">Yes
+            Please</button>
+          <button class="btn rounded
+          rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreasePineapple()">Love to hate it</button>
+          <button class="btn rounded rounded-pill fw-bolder btn-warning w-75 my-2 p-2" onclick="extraPineapple()">Extra
+            Pineapple!</button>
+        </div>
       </div>
-      <div class="col-4"><img src="//placehold.it/600x600" alt="pizza"></div>
+      <div class="col-4">
+        <img src="assets/pineapple0.png" alt="pizza" id="anchovies-wins" class="w-100 p-3 m-auto d-none">
+        <img src="assets/pineapple8.png" alt="pizza" id="pineapple-wins" class="w-100 p-3 m-auto d-none">
+      </div>
       <!-- <div class="col-4"><img
           src="https://www.eatingwell.com/thmb/oHvDTS4pq63C9uF1YK03SEpdSrU=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gettyimages-1124303516-36413b5bf61f45f1b7d18d90000b56b7.jpg"
           alt="pizza"></div> -->
       <div class="col-3 text-center">
-        <h2>Anchovies <i class="mdi mdi-fish"></i></h2>
-        <button class="btn rounded
-  rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increaseAnchovies()">🐟</button>
-        <button class="btn rounded
-  rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreaseAnchovies()">Not Into It</button>
-        <button class="btn rounded rounded-pill fw-bolder btn-warning w-75 my-2 p-2" onclick="extraAnchovies()">Extra
-          Anchovies!</button>
+        <div class="card d-flex align-items-center p-3">
+          <h2>Anchovies <i class="mdi mdi-fish"></i></h2>
+          <button class="btn rounded
+  rounded-pill fw-bolder btn-yeah w-75 my-2 p-2" onclick="increaseAnchovies()">Cowabunga!</button>
+          <button class="btn rounded
+  rounded-pill fw-bolder btn-nah w-75 my-2 p-2" onclick="decreaseAnchovies()">V Not Into It</button>
+          <button class="btn rounded rounded-pill fw-bolder btn-warning w-75 my-2 p-2" onclick="extraAnchovies()">Extra
+            Anchovies!</button>
+        </div>
       </div>
     </section>
 
@@ -53,7 +60,8 @@
         <h5 class="text-dark text-center">Pineapple</h5>
       </div>
       <div class="col-4 text-center">
-        <button class="btn rounded border border-3 border-danger" onclick="resetScore()">RESET</button>
+        <button class="btn rounded border border-3 border-danger d-none" id="reset-button"
+          onclick="resetScore()">RESET</button>
       </div>
       <div class="col-2">
         <h3 class="bg-light rounded border border-2 border-dark text-center p-4" id="anchoviesScore">0</h3>

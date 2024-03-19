@@ -1,75 +1,107 @@
-let pineapplePoints = 0
-let anchoviesPoints = 0
 
+loadToppings()
+
+let toppings = [
+  {
+    topping: "pineapple",
+    points: 0,
+  },
+  {
+    topping: "anchovies",
+    points: 0,
+  }
+]
+
+let toppingP = toppings[0]
+let toppingA = toppings[1]
 
 // pineapple stuff
 function increasePineapple() {
-  pineapplePoints += 1
-  console.log("Pineapple ", pineapplePoints);
+  toppingP.points += 1
+  console.log("Pineapple ", toppingP.points);
   drawPineappleScore()
 }
 
 function decreasePineapple() {
-  pineapplePoints -= 1
-  console.log("Pineapple ", pineapplePoints);
+  toppingP.points -= 1
+  console.log("Pineapple ", toppingP.points);
   drawPineappleScore()
 }
 
 function extraPineapple() {
-  pineapplePoints += 2
-  console.log("Pineapple ", pineapplePoints);
+  toppingP.points += 2
+  console.log("Pineapple ", toppingP.points);
   drawPineappleScore()
 }
 
 function drawPineappleScore() {
   let pineappleScore = document.getElementById("pineappleScore");
-  pineappleScore.innerText = pineapplePoints.toString();
+  pineappleScore.innerText = toppingP.points.toString();
+  console.log(toppingP.topping, toppingP.points)
+  saveToppings()
   checkScore()
 }
 
 
 // anchovies stuff
 function increaseAnchovies() {
-  anchoviesPoints += 1
-  console.log("Anchovies ", anchoviesPoints);
+  toppingA.points += 1
+  console.log("Anchovies ", toppingA.points);
   drawAnchovieScore()
 }
 
 function decreaseAnchovies() {
-  anchoviesPoints -= 1
-  console.log("Anchovies ", anchoviesPoints);
+  toppingA.points -= 1
+  console.log("Anchovies ", toppingA.points);
   drawAnchovieScore()
 }
 
 function extraAnchovies() {
-  anchoviesPoints += 2
-  console.log("Anchovies ", anchoviesPoints);
+  toppingA.points += 2
+  console.log("Anchovies ", toppingA.points);
   drawAnchovieScore()
 }
 
 function drawAnchovieScore() {
   let anchoviesScore = document.getElementById("anchoviesScore");
-  anchoviesScore.innerText = anchoviesPoints.toString();
+  anchoviesScore.innerText = toppingA.points.toString();
+  console.log(toppingA.topping, toppingA.points)
+  saveToppings()
   checkScore()
 }
 
 // game end
 function checkScore() {
-  if (pineapplePoints >= 8) {
-    console.log("Pineapple it is")
+  if (toppingP.points >= 8) {
     window.alert("Pineapple it is")
-    resetScore()
-  } else if
-    (anchoviesPoints >= 8) {
-    console.log("Anchovies. . . Really?")
+    document.getElementById("pineapple-wins").classList.remove("d-none")
+    document.getElementById("reset-button").classList.remove("d-none")
+  } if
+    (toppingA.points >= 8) {
     window.alert("Anchovies. . . Really?")
-    resetScore()
+    document.getElementById("anchovies-wins").classList.remove("d-none")
+    document.getElementById("reset-button").classList.remove("d-none")
   }
 }
 
 function resetScore() {
-  pineapplePoints = 0
-  anchoviesPoints = 0
+  toppingP.points = 0
+  toppingA.points = 0
   drawPineappleScore()
   drawAnchovieScore()
+  document.getElementById("reset-button").classList.add("d-none")
+  document.getElementById("pineapple-wins").classList.add("d-none")
+  document.getElementById("anchovies-wins").classList.add("d-none")
 }
+
+function loadToppings() {
+  let toppingsData = JSON.parse(window.localStorage.getItem("toppings"))
+}
+
+function saveToppings() {
+  window.localStorage.setItem("toppings", JSON.stringify(toppings))
+}
+
+
+loadToppings()
+saveToppings()
